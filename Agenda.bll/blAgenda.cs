@@ -10,7 +10,7 @@ namespace Agenda.bll
 {
     public class blAgenda
     {
-        public bool insertaPersona(bePersona pPersona)
+        public bool insertaPersona(BEPersona pPersona)
         {
             var dataAccess = new daPersona();
             // aqui la logica de negocio
@@ -19,7 +19,7 @@ namespace Agenda.bll
             return dataAccess.insertaPersona(pPersona);
         }
 
-        public bool actualizaPersona(bePersona pPersona)
+        public bool actualizaPersona(BEPersona pPersona)
         {
             var dataAccess = new daPersona();
             // aqui la logica de negocio
@@ -36,13 +36,13 @@ namespace Agenda.bll
                 return false;
             return dataAccess.eliminarPersona(pCodPersona);
         }
-        public bePersona seleccionaPersona(int pCodigo)
+        public BEPersona seleccionaPersona(int pCodigo)
         {
             var dataAccess = new daPersona();
             return dataAccess.seleccionaPersona(pCodigo);
         }
 
-        public List<bePersona> seleccionarPersonas()
+        public List<BEPersona> seleccionarPersonas()
         {
             var dataAccess = new daPersona();
             return dataAccess.seleccionarPersonas();

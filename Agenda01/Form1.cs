@@ -24,7 +24,7 @@ namespace Agenda01
 
         private void listPersonas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var per = daPer.seleccionaPersona(((bePersona)listPersonas.SelectedItem).codPersona);
+            var per = daPer.seleccionaPersona(((BEPersona)listPersonas.SelectedItem).codPersona);
             txtcodigo.Value = per.codPersona;
             txtNombre.Text = per.nombre;
             txtApellidos.Text = per.apellidos;
@@ -39,12 +39,12 @@ namespace Agenda01
                 MessageBox.Show("No puedes registrar sin direccion", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			else
 			{
-				var bePer = new bePersona();
+				var bePer = new BEPersona();
 				bePer.codPersona = (int)txtcodigo.Value;
 				bePer.nombre = txtNombre.Text;
 				bePer.apellidos = txtApellidos.Text;
 				bePer.direccion = txtDireccion.Text;
-				bePer.telefonos = new List<beTelefono>();
+				bePer.telefonos = new List<BETelefono>();
 				if (!daPer.insertaPersona(bePer))
 					MessageBox.Show("No se pudo registrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				else
@@ -62,13 +62,13 @@ namespace Agenda01
 				MessageBox.Show("No se puede modificar a este contacto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			else
 			{
-				var bePer = new bePersona();
+				var bePer = new BEPersona();
 				bePer.codPersona = (int)txtcodigo.Value;
 				bePer.nombre = txtNombre.Text;
 				bePer.apellidos = txtApellidos.Text;
 				bePer.direccion = txtDireccion.Text;
-				bePer.telefonos = new List<beTelefono>();
-				foreach (var item in (List<beTelefono>)listTelefonos.DataSource)
+				bePer.telefonos = new List<BETelefono>();
+				foreach (var item in (List<BETelefono>)listTelefonos.DataSource)
 				{
 					bePer.telefonos.Add(item);
 				}

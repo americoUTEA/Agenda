@@ -8,7 +8,7 @@ namespace Agenda.dal
     public class daPersona
     {
         public datos datosPersonas = new datos();
-        public bool insertaPersona(bePersona pPersona)
+        public bool insertaPersona(BEPersona pPersona)
         {
             var per = new persona() { codPersona = pPersona.codPersona, 
                                       nombre = pPersona.nombre,
@@ -24,7 +24,7 @@ namespace Agenda.dal
             return true;
         }
 
-        public bool actualizaPersona(bePersona pPersona)
+        public bool actualizaPersona(BEPersona pPersona)
         {
             var result = from per in datosPersonas.PersonasData where per.codPersona == pPersona.codPersona select per;
             result.First().codPersona = pPersona.codPersona;
@@ -46,30 +46,30 @@ namespace Agenda.dal
             datosPersonas.PersonasData.Remove(item);
             return true;
         }
-        public bePersona seleccionaPersona(int pCodigo)
+        public BEPersona seleccionaPersona(int pCodigo)
         {
             var result = from per in datosPersonas.PersonasData where per.codPersona == pCodigo select per;
-            var pPersona = new bePersona();
+            var pPersona = new BEPersona();
             pPersona.codPersona = result.First().codPersona;
             pPersona.nombre = result.First().nombre;
             pPersona.apellidos = result.First().apellidos;
             pPersona.direccion = result.First().direccion;
-            pPersona.telefonos = new List<beTelefono>();
+            pPersona.telefonos = new List<BETelefono>();
             if (result.First().telefonos != null)
             {
 
                 foreach (var tel in result.First().telefonos)
                 {
-                    var tele = new beTelefono() { codTelefono = tel.codTelefono, nroTelefono = tel.nroTelefono };
+                    var tele = new BETelefono() { codTelefono = tel.codTelefono, nroTelefono = tel.nroTelefono };
                     pPersona.telefonos.Add(tele);
                 }
             }
             return pPersona;
         }
 
-        public List<bePersona> seleccionarPersonas()
+        public List<BEPersona> seleccionarPersonas()
         {
-            var resultado = new List<bePersona>();
+            var resultado = new List<BEPersona>();
             foreach (var item in datosPersonas.PersonasData)
             {
                 resultado.Add(seleccionaPersona(item.codPersona));

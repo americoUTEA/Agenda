@@ -24,7 +24,7 @@ namespace Agenda02
 
         private void listPersonas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var per = agenda.seleccionaPersona(((bePersona)listPersonas.SelectedItem).codPersona);
+            var per = agenda.seleccionaPersona(((BEPersona)listPersonas.SelectedItem).codPersona);
             txtcodigo.Value = per.codPersona;
             txtNombre.Text = per.nombre;
             txtApellidos.Text = per.apellidos;
@@ -34,12 +34,12 @@ namespace Agenda02
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            var bePer = new bePersona();
+            var bePer = new BEPersona();
             bePer.codPersona = (int)txtcodigo.Value;
             bePer.nombre = txtNombre.Text;
             bePer.apellidos = txtApellidos.Text;
             bePer.direccion = txtDireccion.Text;
-            bePer.telefonos = new List<beTelefono>();
+            bePer.telefonos = new List<BETelefono>();
             if (!agenda.insertaPersona(bePer))
                 MessageBox.Show("No se pudo registrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
@@ -51,13 +51,13 @@ namespace Agenda02
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            var bePer = new bePersona();
+            var bePer = new BEPersona();
             bePer.codPersona = (int)txtcodigo.Value;
             bePer.nombre = txtNombre.Text;
             bePer.apellidos = txtApellidos.Text;
             bePer.direccion = txtDireccion.Text;
-            bePer.telefonos = new List<beTelefono>();
-            foreach (var item in (List<beTelefono>)listTelefonos.DataSource)
+            bePer.telefonos = new List<BETelefono>();
+            foreach (var item in (List<BETelefono>)listTelefonos.DataSource)
             {
                 bePer.telefonos.Add(item);
             }
