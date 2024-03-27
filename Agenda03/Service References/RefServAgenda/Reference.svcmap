@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bfdf893e-0028-4f69-9d32-9f65feda5801" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51141/ServAgenda.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServAgenda.disco" MetadataType="Disco" ID="4ba100df-1f70-474e-b2d5-2a97bacd36a6" SourceId="1" SourceUrl="http://localhost:51141/ServAgenda.svc?disco" />
+    <MetadataFile FileName="ServAgenda.wsdl" MetadataType="Wsdl" ID="228cbe40-bfc4-4b33-a7e6-d57b48393853" SourceId="1" SourceUrl="http://localhost:51141/ServAgenda.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ServAgenda.xsd" MetadataType="Schema" ID="7f075c8d-3275-4e68-8821-fda6f01804a7" SourceId="1" SourceUrl="http://localhost:51141/ServAgenda.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServAgenda1.xsd" MetadataType="Schema" ID="f8f57c29-d87d-4bbe-9167-f35518f80f50" SourceId="1" SourceUrl="http://localhost:51141/ServAgenda.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServAgenda2.xsd" MetadataType="Schema" ID="be37c41a-9205-4ec8-9ed8-f657a6798a83" SourceId="1" SourceUrl="http://localhost:51141/ServAgenda.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServAgenda1.wsdl" MetadataType="Wsdl" ID="e4c12afd-7d48-4b0c-bb7e-284622b32c0f" SourceId="1" SourceUrl="http://localhost:51141/ServAgenda.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

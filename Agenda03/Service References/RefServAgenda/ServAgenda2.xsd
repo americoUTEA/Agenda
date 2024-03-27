@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://agenda.modelo.ServiceContracts" elementFormDefault="qualified" targetNamespace="http://agenda.modelo.ServiceContracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51141/ServAgenda.svc?xsd=xsd1" namespace="http://agenda.datacontracts" />
+  <xs:element xmlns:q1="http://agenda.datacontracts" name="Personas" nillable="true" type="q1:DCListaPersonas" />
+  <xs:element name="CodigoPersona" type="xs:int" />
+  <xs:element xmlns:q2="http://agenda.datacontracts" name="DatosPersona" nillable="true" type="q2:Persona" />
+  <xs:element name="Respuesta" type="xs:boolean" />
+</xs:schema>

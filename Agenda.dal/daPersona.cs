@@ -31,11 +31,14 @@ namespace Agenda.dal
             result.First().nombre = pPersona.nombre;
             result.First().apellidos = pPersona.apellidos;
             result.First().direccion = pPersona.direccion;
-            result.First().telefonos.Clear();
-            foreach (var tel in pPersona.telefonos)
+            if (result.First().telefonos != null)
             {
-                var tele = new telefono() { codTelefono = tel.codTelefono, nroTelefono = tel.nroTelefono };
-                result.First().telefonos.Add(tele);
+                result.First().telefonos.Clear();
+                foreach (var tel in pPersona.telefonos)
+                {
+                    var tele = new telefono() { codTelefono = tel.codTelefono, nroTelefono = tel.nroTelefono };
+                    result.First().telefonos.Add(tele);
+                }
             }
             return true;
         }

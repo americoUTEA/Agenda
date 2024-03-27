@@ -12,7 +12,7 @@ namespace WcfAgendaService
     public interface IServAgenda
     {
         [OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "ObtenerPersonas", ProtectionLevel = ProtectionLevel.None)]
-        Agenda.MessageContracts.MCListaPersonas ObtenerPersonas(Agenda.MessageContracts.MCCodigo request);
+        Agenda.MessageContracts.MCListaPersonas ObtenerPersonas();
 
         [OperationContract(IsTerminating = false, IsInitiating = true, IsOneWay = false, AsyncPattern = false, Action = "SeleccionaPersona", ProtectionLevel = ProtectionLevel.None)]
         Agenda.MessageContracts.MCPersona SeleccionaPersona(Agenda.MessageContracts.MCCodigo request);

@@ -12,7 +12,7 @@ namespace WcfAgendaService
     public class ServAgenda : IServAgenda
     {
 
-        public MCListaPersonas ObtenerPersonas(MCCodigo request)
+        public MCListaPersonas ObtenerPersonas()
         {
             var objResponse = new MCListaPersonas();
             var objAgenda = new blAgenda();

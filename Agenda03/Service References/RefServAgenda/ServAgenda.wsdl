@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://agenda.modelo.ServiceContracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://agenda.modelo.ServiceContracts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://agenda.modelo.ServiceContracts/Imports">
+      <xsd:import schemaLocation="http://localhost:51141/ServAgenda.svc?xsd=xsd2" namespace="http://agenda.modelo.ServiceContracts" />
+      <xsd:import schemaLocation="http://localhost:51141/ServAgenda.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51141/ServAgenda.svc?xsd=xsd1" namespace="http://agenda.datacontracts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SCAgenda_ObtenerPersonas_InputMessage" />
+  <wsdl:message name="MCListaPersonas">
+    <wsdl:part name="Personas" element="tns:Personas" />
+  </wsdl:message>
+  <wsdl:message name="MCCodigo">
+    <wsdl:part name="CodigoPersona" element="tns:CodigoPersona" />
+  </wsdl:message>
+  <wsdl:message name="MCPersona">
+    <wsdl:part name="DatosPersona" element="tns:DatosPersona" />
+  </wsdl:message>
+  <wsdl:message name="MCRespuesta">
+    <wsdl:part name="Respuesta" element="tns:Respuesta" />
+  </wsdl:message>
+  <wsdl:portType name="SCAgenda">
+    <wsdl:operation name="ObtenerPersonas">
+      <wsdl:input wsaw:Action="ObtenerPersonas" message="tns:SCAgenda_ObtenerPersonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://agenda.modelo.ServiceContracts/SCAgenda/ObtenerPersonasResponse" name="MCListaPersonas" message="tns:MCListaPersonas" />
+    </wsdl:operation>
+    <wsdl:operation name="SeleccionaPersona">
+      <wsdl:input wsaw:Action="SeleccionaPersona" name="MCCodigo" message="tns:MCCodigo" />
+      <wsdl:output wsaw:Action="http://agenda.modelo.ServiceContracts/SCAgenda/SeleccionaPersonaResponse" name="MCPersona" message="tns:MCPersona" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertaPersona">
+      <wsdl:input wsaw:Action="InsertaPersona" name="MCPersona" message="tns:MCPersona" />
+      <wsdl:output wsaw:Action="http://agenda.modelo.ServiceContracts/SCAgenda/InsertaPersonaResponse" name="MCRespuesta" message="tns:MCRespuesta" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaPersona">
+      <wsdl:input wsaw:Action="ActualizaPersona" name="MCPersona" message="tns:MCPersona" />
+      <wsdl:output wsaw:Action="http://agenda.modelo.ServiceContracts/SCAgenda/ActualizaPersonaResponse" name="MCRespuesta" message="tns:MCRespuesta" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaPersona">
+      <wsdl:input wsaw:Action="EliminaPersona" name="MCCodigo" message="tns:MCCodigo" />
+      <wsdl:output wsaw:Action="http://agenda.modelo.ServiceContracts/SCAgenda/EliminaPersonaResponse" name="MCRespuesta" message="tns:MCRespuesta" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://agenda.datacontracts" elementFormDefault="qualified" targetNamespace="http://agenda.datacontracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DCListaPersonas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Persona" nillable="true" type="tns:Persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DCListaPersonas" nillable="true" type="tns:DCListaPersonas" />
+  <xs:complexType name="Persona">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="Nombre" nillable="true" type="xs:string" />
+      <xs:element name="Apellidos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element name="Telefonos" nillable="true" type="tns:DCListaTelefono" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Persona" nillable="true" type="tns:Persona" />
+  <xs:complexType name="DCListaTelefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telefono" nillable="true" type="tns:Telefono" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DCListaTelefono" nillable="true" type="tns:DCListaTelefono" />
+  <xs:complexType name="Telefono">
+    <xs:sequence>
+      <xs:element name="CodigoTelefono" type="xs:int" />
+      <xs:element name="NroTelefono" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Telefono" nillable="true" type="tns:Telefono" />
+</xs:schema>

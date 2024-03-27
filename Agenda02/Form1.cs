@@ -72,9 +72,16 @@ namespace Agenda02
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var per = agenda.eliminarPersona((int)txtcodigo.Value);
-            MessageBox.Show("Eliminado Correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            listPersonas.DataSource = agenda.seleccionarPersonas();
+            var resultado = agenda.eliminarPersona((int)txtcodigo.Value);
+            if (!resultado)
+            {
+                MessageBox.Show("No se pudo eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Eliminado Correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                listPersonas.DataSource = agenda.seleccionarPersonas();
+            }
         }
     }
 }
